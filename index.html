@@ -3,184 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap Buttons Magazine Layout Lengkap</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Majalah Pantai - Responsive Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
     }
-    .section {
-      padding: 4rem 0;
-      border-bottom: 1px solid #dee2e6;
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
     }
-    .section:nth-child(even) .row {
-      flex-direction: row-reverse;
+    .small-article-img {
+      width: 100%;
+      max-width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
     }
-    /* Jarak antar tombol */
-    .btn-group > * {
-      margin: 0.25rem;
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
     }
-    /* Buat tombol berjajar rapih dan responsive */
-    .btn-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
+    @media (max-width: 767.98px) {
+      .hero-img {
+        max-height: 250px;
+        border-radius: 8px;
+      }
+      .small-article-img {
+        height: 100px;
+        max-width: 100px;
+        border-radius: 8px;
+      }
+      .card-img-top {
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <header class="py-5 text-center bg-primary text-white rounded mb-5">
-    <h1 class="display-6 fw-normal">Macam-Macam Button Bootstrap dengan Magazine Layout</h1>
-  </header>
+  <!-- NAVBAR KEREN -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Magazine Layout</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- 1. Button Variants -->
-  <section class="section">
-    <div class="row align-items-center">
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Magazine</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="button.html">Button</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- HERO SECTION -->
+  <div class="container my-4 my-md-5">
+    <div class="row g-3">
       <div class="col-md-6">
-        <h2>1. Button Variants</h2>
-        <p>
-          Gunakan kelas <code>btn-primary</code>, <code>btn-success</code>, dll untuk menandai konteks aksi tombol.<br>
-          Contohnya:<br>
-          <strong>Primary</strong> – Aksi utama.<br>
-          <strong>Success</strong> – Tindakan berhasil.<br>
-          <strong>Danger</strong> – Peringatan atau aksi destruktif.
-        </p>
+        <img src="img/pantai.webp" alt="Pantai" class="hero-img w-100" />
       </div>
-      <div class="col-md-6">
-        <div class="btn-wrap">
-          <button class="btn btn-primary">Primary</button>
-          <button class="btn btn-secondary">Secondary</button>
-          <button class="btn btn-success">Success</button>
-          <button class="btn btn-danger">Danger</button>
-          <button class="btn btn-warning">Warning</button>
-          <button class="btn btn-info">Info</button>
-          <button class="btn btn-light">Light</button>
-          <button class="btn btn-dark">Dark</button>
-          <button class="btn btn-link">Link</button>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2>Eksplorasi Pantai Terindah di Dunia</h2>
+        <p>Temukan surga tersembunyi, pasir putih yang memukau, dan air laut sebening kristal di edisi kali ini.</p>
+        <a href="#" class="btn btn-primary align-self-start">Baca Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID ARTIKEL KECIL -->
+  <div class="container mb-5">
+    <div class="row g-3">
+      <div class="col-12 col-md-6 d-flex gap-3 align-items-center">
+        <img src="img/pantai bali.jpg" class="small-article-img" alt="Pantai" />
+        <div>
+          <h5>Pantai Rahasia di Bali</h5>
+          <p class="text-muted mb-0">Sebuah pantai tersembunyi yang belum banyak dijamah turis. Cocok untuk kamu yang ingin menyepi.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 d-flex gap-3 align-items-center">
+        <img src="img/pohonkelapa.jpg" class="small-article-img" alt="Pantai" />
+        <div>
+          <h5>Liburan Tropis Impian</h5>
+          <p class="text-muted mb-0">Tips liburan ke daerah tropis dengan budget hemat tapi tetap menyenangkan.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- 2. Outline Buttons -->
-  <section class="section">
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2">
-        <h2>2. Outline Buttons</h2>
-        <p>
-          Gunakan kelas <code>btn-outline-primary</code>, <code>btn-outline-success</code>, dll untuk tombol dengan border tanpa latar warna solid.<br>
-          Cocok untuk desain minimalis dan modern.
-        </p>
+  <!-- SECTION 4 CARD PANTAI DI INDONESIA -->
+  <div class="container my-5">
+    <h3 class="mb-4">Pantai Terindah di Indonesia</h3>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/Kelingking-Beach.jpg" class="card-img-top" alt="Pantai Kelingking" />
+          <div class="card-body">
+            <h5 class="card-title">Pantai Kelingking, Nusa Penida</h5>
+            <p class="card-text">Tebing ikonik berbentuk T-Rex dengan air laut biru yang menakjubkan.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 order-md-1">
-        <div class="btn-wrap">
-          <button class="btn btn-outline-primary">Primary</button>
-          <button class="btn btn-outline-secondary">Secondary</button>
-          <button class="btn btn-outline-success">Success</button>
-          <button class="btn btn-outline-danger">Danger</button>
-          <button class="btn btn-outline-warning">Warning</button>
-          <button class="btn btn-outline-info">Info</button>
-          <button class="btn btn-outline-light">Light</button>
-          <button class="btn btn-outline-dark">Dark</button>
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/Parai-Tenggiri.jpg" class="card-img-top" alt="Pantai Parai Tenggiri" />
+          <div class="card-body">
+            <h5 class="card-title">Pantai Parai Tenggiri, Bangka</h5>
+            <p class="card-text">Pasir putih bersih dan batu granit besar jadi daya tarik utama pantai ini.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/Pink-Beach.jpg" class="card-img-top" alt="Pantai Pink" />
+          <div class="card-body">
+            <h5 class="card-title">Pantai Pink, Lombok</h5>
+            <p class="card-text">Pasirnya berwarna pink alami, hasil perpaduan pasir putih dan serpihan karang merah.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/derawan.webp" class="card-img-top" alt="Pantai Derawan" />
+          <div class="card-body">
+            <h5 class="card-title">Pantai Derawan, Kalimantan Timur</h5>
+            <p class="card-text">Surga tersembunyi dengan biota laut eksotis dan air sejernih kristal.</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- 3. Disabled Buttons -->
-  <section class="section">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2>3. Disabled Buttons</h2>
-        <p>
-          Tambahkan atribut <code>disabled</code> pada tombol <code>&lt;button&gt;</code> atau kelas <code>disabled</code> pada <code>&lt;a&gt;</code> untuk menonaktifkan tombol.<br>
-          Tombol akan terlihat tapi tidak bisa diklik.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <div class="btn-wrap">
-          <button class="btn btn-primary" disabled>Primary Disabled</button>
-          <button class="btn btn-outline-secondary" disabled>Outline Disabled</button>
-          <a href="#" class="btn btn-danger disabled" tabindex="-1" aria-disabled="true">Link Disabled</a>
-        </div>
-      </div>
+  <!-- FOOTER -->
+  <footer style="background-color: #f8f9fa;" class="py-3 text-center mt-6">
+    <div class="container">
+      <p>&copy; 2025 Pantai dengan Magazine Layout. Semua Hak Dilindungi.</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- 4. Button Sizes -->
-  <section class="section">
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2">
-        <h2>4. Button Sizes</h2>
-        <p>
-          Gunakan <code>btn-sm</code> untuk tombol kecil, <code>btn-lg</code> untuk tombol besar, dan default untuk ukuran normal.
-        </p>
-      </div>
-      <div class="col-md-6 order-md-1">
-        <div class="btn-wrap">
-          <button class="btn btn-success btn-lg">Large Button</button>
-          <button class="btn btn-success">Default Button</button>
-          <button class="btn btn-success btn-sm">Small Button</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Block Buttons -->
-  <section class="section">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2>5. Block Buttons</h2>
-        <p>
-          Gunakan <code>d-grid</code> pada container tombol agar tombol memenuhi lebar container (block button).<br>
-          Atau gunakan kelas <code>w-100</code> pada tombol untuk lebar 100%.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <div class="d-grid gap-2">
-          <button class="btn btn-dark btn-lg">Block Button (d-grid)</button>
-          <button class="btn btn-dark w-100">Block Button (w-100)</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. Toggle Buttons -->
-  <section class="section">
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2">
-        <h2>6. Toggle Buttons</h2>
-        <p>
-          Gunakan <code>btn-check</code> untuk input checkbox atau radio yang dikaitkan dengan label tombol.<br>
-          Juga bisa gunakan tombol dengan atribut <code>data-bs-toggle="button"</code> untuk toggle sederhana.
-        </p>
-      </div>
-      <div class="col-md-6 order-md-1">
-        <div class="btn-wrap" role="group" aria-label="Toggle Buttons">
-          <input type="checkbox" class="btn-check" id="toggle1" autocomplete="off">
-          <label class="btn btn-outline-primary" for="toggle1">Toggle 1</label>
-
-          <input type="checkbox" class="btn-check" id="toggle2" autocomplete="off">
-          <label class="btn btn-outline-primary" for="toggle2">Toggle 2</label>
-
-          <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-          <label class="btn btn-outline-success" for="option1">Option 1</label>
-
-          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-          <label class="btn btn-outline-success" for="option2">Option 2</label>
-        </div>
-        <div class="mt-3">
-          <button class="btn btn-warning" data-bs-toggle="button" autocomplete="off">Toggle Button</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
